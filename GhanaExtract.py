@@ -6,29 +6,28 @@ def extractTransactionNo(str):
 	transactionNo = re.findall("[A-z]{5}\.\s[A-Z]{2}\:\s\d+",str)
 	transactionNo = re.findall("\d{12}",transactionNo[0])
 	transactionNo = transactionNo[0]
-	print transactionNo
-    return
+	print (transactionNo)
+	return
 #function to extract amount sent
 def extractAmountSent(str):
 	allMoneyInString = re.findall("\d+\.\d+[A-Z]{3}|\d+[A-Z]{3}", example, re.I)
 	actualSentAmount = allMoneyInString[0]
-	print actualSentAmount
-    return
+	print (actualSentAmount)
+	return
 
 #function to extract account number
 def extractRecieverAccount(str):
 	stringExact = re.findall("[a-z]{2}\s\d{12}\.", str)
 	accountNo = transactionNo = re.findall("\d{12}",stringExact[0])
 	accountNo = accountNo[0]
-	print accountNo
-    return
+	print (accountNo)
+	return
 #Function to exact available balance#function to extract account number
 def extractAvailableBal(str):
-	allMoneys = re.findall("\d+\.\d+[A-Z]{3}|\d+[A-Z]{3}", str, re.I)= 
-	currentBal = transactionNo = re.findall("\d{12}",allMoneys[0])
-	currentBal = currentBal[1]
-	print currentBal
-    return
+	allMoneys = re.findall("\d+\.\d+[A-Z]{3}|\d+[A-Z]{3}", str, re.I)
+	currentBal = allMoneys[1]
+	print (currentBal)
+	return
 #call my function
 extractTransactionNo(example)
 extractAmountSent(example)
